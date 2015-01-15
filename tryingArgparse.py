@@ -14,16 +14,33 @@ even = args.even
 countBy = args.countby
 
 
-def counting(a, z, even=False, countBy=False):
+def evenF(number):
+    if number % 2 == 0:
+        return number
+
+
+def countByF(start, number):
+    if (number-start) % countBy == 0:
+        return number
+    else:
+        return 0
+
+
+def counting(a, z):
     for i in xrange(a, z+1):
-        if even:
-            if i % 2 == 0:
-                print i
-        if countBy:
-            if i % countBy == 0:
-                print i
+        if even and countBy:
+            result = countByF(a, i)
+            result = evenF(result)
+        elif even:
+            result = evenF(i)
+        elif countBy:
+            result = countByF(a, i)
         else:
-            print i
+            result = i
+        if result == 0 or result is None:
+                continue
+        else:
+            print result
 
 if __name__ == "__main__":
-    counting(start, end, even=False, countBy=False)
+    counting(start, end)
