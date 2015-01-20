@@ -21,7 +21,7 @@ with open(input_file, "rb") as my_file:
     for i, row in enumerate(all_rows):
         with open(write_file, 'wb') as chunk:
             writer = csv.writer(chunk)
-            writer.writerows(','.join(row))
+            writer.writerow(row)
             if i % outLines == 0:
                 write_file = output_file + str(i / outLines)
-
+                print write_file
