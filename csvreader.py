@@ -11,7 +11,7 @@ output_file = args.output_file
 outLines = args.outlines
 
 
-with open(inFile, "rb") as my_file:
+with open(input_file, "rb") as my_file:
     reader = csv.reader(my_file)
     all_rows = list(reader)
     inLines = len(all_rows)
