@@ -19,7 +19,7 @@ with open(input_file, "rb") as my_file:
         print "Ok, but the number of lines in file is less than the one you specified"
     write_file = output_file + "0"
     for i, row in enumerate(all_rows):
-        with open(write_file, 'wb') as chunk:
+        with open(write_file, 'ab') as chunk:
             writer = csv.writer(chunk)
             writer.writerow(row)
             if i % outLines == 0:
